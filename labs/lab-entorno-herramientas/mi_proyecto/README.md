@@ -1,0 +1,1 @@
+No se aplicaron excepciones locales; se sigue PEP 8 y las herramientas (black/isort/ruff) sin ignores globales
