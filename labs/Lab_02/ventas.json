@@ -1,0 +1,92 @@
+{
+  "ventas": [
+    {
+      "id": 1,
+      "producto": "Laptop Gaming",
+      "categoria": "Electrónicos",
+      "cantidad": 2,
+      "precio": 1200.50,
+      "fecha": "2024-01-15"
+    },
+    {
+      "id": 2,
+      "producto": "Mouse Inalámbrico",
+      "categoria": "Electrónicos",
+      "cantidad": 5,
+      "precio": 25.99,
+      "fecha": "2024-01-16"
+    },
+    {
+      "id": 3,
+      "producto": "Silla Oficina",
+      "categoria": "Muebles",
+      "cantidad": 3,
+      "precio": 450.00,
+      "fecha": "2024-01-17"
+    },
+    {
+      "id": 4,
+      "producto": "Libro Python",
+      "categoria": "Libros",
+      "cantidad": 20,
+      "precio": 35.50,
+      "fecha": "2024-01-18"
+    },
+    {
+      "id": 5,
+      "producto": "Monitor 27\"",
+      "categoria": "Electrónicos",
+      "cantidad": 4,
+      "precio": 320.00,
+      "fecha": "2024-01-19"
+    },
+    {
+      "id": 6,
+      "producto": "Escritorio",
+      "categoria": "Muebles",
+      "cantidad": 2,
+      "precio": 280.00,
+      "fecha": "2024-01-20"
+    },
+    {
+      "id": 7,
+      "producto": "Teclado Mecánico",
+      "categoria": "Electrónicos",
+      "cantidad": 6,
+      "precio": 89.99,
+      "fecha": "2024-01-21"
+    },
+    {
+      "id": 8,
+      "producto": "Libro JavaScript",
+      "categoria": "Libros",
+      "cantidad": 8,
+      "precio": 42.75,
+      "fecha": "2024-01-22"
+    },
+    {
+      "id": 9,
+      "producto": "Lámpara LED",
+      "categoria": "Muebles",
+      "cantidad": 7,
+      "precio": 45.00,
+      "fecha": "2024-01-23"
+    },
+	{
+      "id": 10,
+      "producto": "Libro Java",
+      "categoria": "Libros",
+      "cantidad": 60,
+      "precio": 12.05,
+      "fecha": "2024-01-28"
+    },
+    {
+      "id": 11,
+      "producto": "Auriculares Bluetooth",
+      "categoria": "Electrónicos",
+      "cantidad": 4,
+      "precio": 150.00,
+      "fecha": "2024-01-24"
+    }
+  ]
+}
