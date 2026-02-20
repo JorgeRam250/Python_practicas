@@ -1,0 +1,29 @@
+{
+  "resumen": {
+    "total_ventas": 11,
+    "total_ingresos": 8950.89,
+    "total_unidades": 121,
+    "venta_promedio": 813.7172727272726,
+    "producto_mas_vendido": {
+      "nombre": "Libro Java",
+      "unidades": 60
+    }
+  },
+  "por_categoria": {
+    "Electrónicos": 4950.889999999999,
+    "Muebles": 2225.0,
+    "Libros": 1775.0
+  },
+  "por_rango_precio": {
+    "alto": 5591.0,
+    "bajo": 2219.95,
+    "medio": 1139.94
+  },
+  "top_productos": {
+    "Libro Java": 60,
+    "Libro Python": 20,
+    "Libro JavaScript": 8,
+    "Lámpara LED": 7,
+    "Teclado Mecánico": 6
+  }
+}
