@@ -1,18 +1,18 @@
-# Gu铆a Paso a Paso para el Laboratorio de Python
+# Guía Paso a Paso para el Laboratorio de Python
 
-## 馃幆 Objetivo
+## Objetivo
 Completar el laboratorio de procesamiento de JSON con manejo de errores, aprendiendo los fundamentos de Python.
 
-## 馃搵 Requisitos Previos
+## Requisitos Previos
 - Python 3.8 o superior instalado
-- Editor de c贸digo (VS Code, PyCharm, etc.)
-- Conocimientos b谩sicos de programaci贸n (variables, bucles)
+- Editor de código (VS Code, PyCharm, etc.)
+- Conocimientos básicos de programación (variables, bucles)
 
 ---
 
-## 馃殌 PASO 1: Configuraci贸n del Entorno
+## PASO 1: Configuración del Entorno
 
-### 1.1 Verificar instalaci贸n de Python
+### 1.1 Verificar instalación de Python
 ```bash
 python --version
 # o
@@ -26,7 +26,7 @@ cd laboratorio_python
 ```
 
 ### 1.3 Descargar los archivos del laboratorio
-Aseg煤rate de tener todos los archivos:
+Asegúrate de tener todos los archivos:
 - `Sistema ventas`
 - `ventas.json`
 - `README.md`
@@ -34,7 +34,7 @@ Aseg煤rate de tener todos los archivos:
 
 ---
 
-## 馃摎 PASO 2: Entender la Estructura de los Archivos
+## PASO 2: Entender la Estructura de los Archivos
 
 ### 2.1 Analizar el archivo JSON de ventas
 Abre `ventas.json` y observa:
@@ -43,61 +43,61 @@ Abre `ventas.json` y observa:
 
 ---
 
-## 馃幆 PASO 3: Practicar con el ejemplo Sistema_ventas
+##  PASO 3: Practicar con el ejemplo Sistema_ventas
 
 ### 3.1 Entender las diferencias
 El Sistema_ventas introduce conceptos adicionales:
-- **Expresiones regulares** para validaci贸n de fechas
-- **Agregaciones m谩s complejas**
-- **Generaci贸n de reportes en JSON**
-- **Filtrado por categor铆as**
+- **Expresiones regulares** para validación de fechas
+- **Agregaciones más complejas**
+- **Generación de reportes en JSON**
+- **Filtrado por categorías**
 
 ### 3.2 Ejecutar el Sistema_ventas
 ```bash
-# An谩lisis general
+# Análisis general
 python ejemplo2_ventas.py ventas.json
 
-# Filtrar por categor铆a
-python ejemplo2_ventas.py ventas.json Electr贸nicos
+# Filtrar por categoría
+python ejemplo2_ventas.py ventas.json Electrónicos
 ```
 
 ### 3.3 Analizar la salida
-Observa c贸mo se genera un reporte JSON adicional con los resultados.
+Observa cómo se genera un reporte JSON adicional con los resultados.
 
 ---
 
 ---
 
-## 馃攳 PASO 4: An谩lisis del C贸digo
+## PASO 4: Análisis del Código
 
 Dibuja un diagrama de flujo del programa:
 1. Inicio 鈫?Leer argumentos
 2. Validar archivo 鈫?Leer JSON
 3. Procesar datos 鈫?Filtrar
-4. Calcular estad铆sticas 鈫?Mostrar resultados
+4. Calcular estadísticas 鈫?Mostrar resultados
 5. Fin
 
 ---
 
-## 鉁?PASO 5: Verificaci贸n Final
+## PASO 5: Verificación Final
 
 ### 5.1 Checklist de Conceptos Aprendidos
-- [ ] Sintaxis y indentaci贸n de Python
+- [ ] Sintaxis y indentación de Python
 - [ ] Variables y tipos de datos
 - [ ] Listas y diccionarios
 - [ ] Control de flujo (if, for, while)
-- [ ] Funciones y par谩metros
+- [ ] Funciones y parámetros
 - [ ] Manejo de excepciones (try-except)
 - [ ] Lectura/escritura de archivos
 - [ ] Procesamiento JSON
-- [ ] Expresiones regulares b谩sicas
+- [ ] Expresiones regulares básicas
 
-### 5.2 Autoevaluaci贸n
+### 5.2 Autoevaluación
 Responde estas preguntas:
-1. 驴Qu茅 es el type hinting y por qu茅 es 煤til?
-2. 驴Cu谩ndo usar铆as `.get()` vs `[]` para acceder a diccionarios?
-3. 驴Por qu茅 es importante el manejo de excepciones?
-4. 驴Qu茅 ventajas tienen las list comprehensions?
-5. 驴C贸mo validar铆as datos de entrada en Python?
+1. -Qué es el type hinting y por qué es útil?
+2. -Cuándo usarías `.get()` vs `[]` para acceder a diccionarios?
+3. -Por qué es importante el manejo de excepciones?
+4. -Qué ventajas tienen las list comprehensions?
+5. -Cómo validarías datos de entrada en Python?
 
 ---
