@@ -1,0 +1,31 @@
+RESUMEN DE PROCESAMIENTO
+========================================
+Fecha: 2026-02-23 17:03:25
+Total empleados: 10
+Edad promedio: 34.7 años
+Salario promedio: $4470.00
+Salario total: $44700.00
+Errores: 0
+
+POR DEPARTAMENTO:
+--------------------
+Ventas:
+  Empleados: 3
+  Salario promedio: $4166.67
+  Edad promedio: 33.0 años
+
+IT:
+  Empleados: 3
+  Salario promedio: $4266.67
+  Edad promedio: 34.0 años
+
+Gerencia:
+  Empleados: 2
+  Salario promedio: $6150.00
+  Edad promedio: 43.5 años
+
+Marketing:
+  Empleados: 2
+  Salario promedio: $3550.00
+  Edad promedio: 29.5 años
+

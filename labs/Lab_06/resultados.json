@@ -1,0 +1,65 @@
+{
+  "fecha_procesamiento": "2026-02-23T17:02:45.643966",
+  "resumen_general": {
+    "total_empleados": 10,
+    "edad_promedio": 34.7,
+    "salario_promedio": 4470.0,
+    "salario_total": 44700.0
+  },
+  "por_departamento": {
+    "Ventas": {
+      "cantidad": 3,
+      "salario_total": 12500.0,
+      "empleados": [
+        "Ana López",
+        "Luis Rodríguez",
+        "Miguel Ángel"
+      ],
+      "salario_promedio": 4166.666666666667
+    },
+    "IT": {
+      "cantidad": 3,
+      "salario_total": 12800.0,
+      "empleados": [
+        "Carlos Mendoza",
+        "Sofía Martínez",
+        "Juan Herrera"
+      ],
+      "salario_promedio": 4266.666666666667
+    },
+    "Gerencia": {
+      "cantidad": 2,
+      "salario_total": 12300.0,
+      "empleados": [
+        "María García",
+        "Roberto Silva"
+      ],
+      "salario_promedio": 6150.0
+    },
+    "Marketing": {
+      "cantidad": 2,
+      "salario_total": 7100.0,
+      "empleados": [
+        "Patricia Morales",
+        "Diana Torres"
+      ],
+      "salario_promedio": 3550.0
+    }
+  },
+  "empleado_mayor_salario": {
+    "id": 6,
+    "nombre": "Roberto Silva",
+    "edad": 45,
+    "salario": 6500.0,
+    "departamento": "Gerencia",
+    "fecha_ingreso": "2019-11-05"
+  },
+  "empleado_menor_salario": {
+    "id": 7,
+    "nombre": "Patricia Morales",
+    "edad": 26,
+    "salario": 3200.0,
+    "departamento": "Marketing",
+    "fecha_ingreso": "2023-05-30"
+  }
+}
