@@ -1,0 +1,109 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dc-postgres
+    environment:
+      POSTGRES_DB: distrito_chilaquil
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d distrito_chilaquil"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  kafka:
+    image: apache/kafka:3.9.0
+    container_name: dc-kafka
+    ports:
+      - "9092:9092"
+    volumes:
+      # Comentario para junior: se monta config fija para anunciar "kafka:9092" dentro de la red Docker.
+      - ./config/kafka/server.properties:/mnt/shared/config/server.properties:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list >/dev/null 2>&1",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 20
+
+  migrate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dc-migrate
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/distrito_chilaquil
+      DATABASE_ECHO: "false"
+      KAFKA_ENABLED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: "no"
+
+  seed:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dc-seed
+    command: ["python", "-m", "src.infrastructure.db.seed_from_csv"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/distrito_chilaquil
+      DATABASE_ECHO: "false"
+      KAFKA_ENABLED: "false"
+    volumes:
+      # Comentario para junior: se inyectan CSV seed al contenedor para cargarlos a PostgreSQL.
+      - ./data/seed:/app/data/seed:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    restart: "no"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dc-app
+    command: ["uvicorn", "src.infrastructure.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      SERVICE_NAME: distrito-chilaquil
+      API_VERSION: 0.1.0
+      LOG_LEVEL: INFO
+      REQUEST_ID_HEADER: X-Request-ID
+      HEALTHCHECK_TIMEOUT_SECONDS: "1.0"
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@postgres:5432/distrito_chilaquil
+      DATABASE_ECHO: "false"
+      # Comentario para junior: la API consume el broker por DNS interno de Docker.
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      KAFKA_CLIENT_ID: distrito-chilaquil-api
+      KAFKA_TOPIC_ORDERS: orders.v1
+      KAFKA_ENABLED: "true"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+      seed:
+        condition: service_completed_successfully
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8000/health >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  postgres_data:

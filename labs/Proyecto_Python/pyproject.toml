@@ -1,0 +1,67 @@
+[build-system]
+requires = ["poetry-core>=1.9.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "distrito-chilaquil"
+version = "0.1.0"
+description = "Base arquitectonica para Distrito Chilaquil."
+authors = ["Distrito Chilaquil Team <dev@distritochilaquil.local>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+fastapi = "^0.135.1"
+uvicorn = { version = "^0.34.0", extras = ["standard"] }
+sqlalchemy = "^2.0.38"
+asyncpg = "^0.30.0"
+alembic = "^1.14.1"
+pydantic = "^2.10.6"
+aiokafka = "^0.12.0"
+starlette = "^0.49.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-asyncio = "^0.25.3"
+httpx = "^0.28.1"
+ruff = "^0.9.6"
+mypy = "^1.15.0"
+bandit = "^1.8.3"
+safety = "^3.2.13"
+pip-audit = "^2.8.0"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ASYNC"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src", "tests"]
+strict = true
+warn_unused_configs = true
+mypy_path = "."
+exclude = ["^migrations/"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"
+markers = [
+  "integration: tests de integracion con servicios reales o contenedores",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
+skips = ["B101"]
