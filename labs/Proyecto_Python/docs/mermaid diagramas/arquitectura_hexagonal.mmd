@@ -1,0 +1,11 @@
+﻿flowchart LR
+    UI[Interfaz demo] --> API[Adaptador FastAPI]
+    API --> APP[Capa aplicacion\nCasos de uso + puertos]
+    APP --> DOM[Capa dominio\nEntidades + reglas]
+    APP --> OUT[Puertos de salida]
+
+    OUT --> DB[(PostgreSQL asincrono)]
+    OUT --> KAFKA[(Publicador Kafka)]
+
+    DB --> ETL[Capa ETL\nextraer/transformar/cargar]
+    ETL --> DW[(Modelo analitico)]

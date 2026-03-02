@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distrito Chilaquil mascot icon (mono white)">
+  <rect width="512" height="512" fill="none"/>
+  <path d="M256 92
+           Q256 56 292 76
+           L420 352
+           Q444 404 392 414
+           L120 414
+           Q68 404 92 352
+           L220 76
+           Q256 56 256 92
+           Z"
+        fill="#FFFFFF"/>
+  <circle cx="210" cy="258" r="18" fill="#FFFFFF"/>
+  <circle cx="302" cy="258" r="18" fill="#FFFFFF"/>
+  <path d="M214 312 Q256 344 298 312" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M356 258
+           C388 300 396 332 356 368
+           C316 332 324 300 356 258
+           Z"
+        fill="#FFFFFF"/>
+</svg>

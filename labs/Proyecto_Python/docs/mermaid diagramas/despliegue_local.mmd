@@ -1,0 +1,6 @@
+﻿flowchart LR
+    Usuario[Usuario] --> UI[UI estatica :5500]
+    UI --> API[API FastAPI :8000]
+    API --> PG[(PostgreSQL :5432)]
+    API --> KF[(Kafka :9092)]
+    MIG[Servicio de migraciones] --> PG

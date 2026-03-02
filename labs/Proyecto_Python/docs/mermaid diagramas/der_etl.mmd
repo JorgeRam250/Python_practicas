@@ -1,0 +1,140 @@
+﻿erDiagram
+    STG_CLIENTES {
+        UUID customer_id PK
+        STRING full_name
+        STRING email
+    }
+
+    STG_PRODUCTOS {
+        UUID product_id PK
+        STRING sku
+        STRING name
+        DECIMAL unit_price
+        BOOLEAN is_active
+    }
+
+    STG_ORDENES {
+        UUID order_id PK
+        UUID customer_id FK
+        STRING branch_id
+        DECIMAL shipping_cost
+        DECIMAL tax_rate
+        STRING status
+        STRING cancellation_reason
+    }
+
+    STG_ITEMS_ORDEN {
+        UUID order_id FK
+        INT line_number PK
+        UUID product_id FK
+        STRING product_name
+        DECIMAL unit_price
+        INT quantity
+    }
+
+    STG_FACTURAS {
+        UUID order_id PK, FK
+        STRING external_invoice_id
+        DECIMAL total_amount
+    }
+
+    DIM_CLIENTE {
+        BIGINT cliente_key PK
+        UUID customer_id_nk UK
+        STRING full_name
+        STRING email
+        DATE vigencia_desde
+        DATE vigencia_hasta
+        BOOLEAN es_actual
+    }
+
+    DIM_PRODUCTO {
+        BIGINT producto_key PK
+        UUID product_id_nk UK
+        STRING sku
+        STRING name
+        BOOLEAN is_active
+        DATE vigencia_desde
+        DATE vigencia_hasta
+        BOOLEAN es_actual
+    }
+
+    DIM_SUCURSAL {
+        BIGINT sucursal_key PK
+        STRING branch_id_nk UK
+        STRING sucursal_nombre
+        STRING ciudad
+        STRING estado
+    }
+
+    DIM_TIEMPO {
+        INT fecha_key PK
+        DATE fecha
+        INT anio
+        INT mes
+        INT dia
+        INT semana
+        INT trimestre
+    }
+
+    FACT_ORDENES {
+        BIGINT orden_fact_key PK
+        UUID order_id_nk UK
+        BIGINT cliente_key FK
+        BIGINT sucursal_key FK
+        INT fecha_key FK
+        DECIMAL subtotal
+        DECIMAL impuesto_total
+        DECIMAL costo_envio
+        DECIMAL total
+        STRING status
+    }
+
+    FACT_ITEMS_ORDEN {
+        BIGINT item_fact_key PK
+        UUID order_id_nk
+        INT line_number
+        BIGINT cliente_key FK
+        BIGINT producto_key FK
+        BIGINT sucursal_key FK
+        INT fecha_key FK
+        INT quantity
+        DECIMAL unit_price
+        DECIMAL subtotal_item
+    }
+
+    FACT_FACTURAS {
+        BIGINT factura_fact_key PK
+        UUID order_id_nk UK
+        BIGINT cliente_key FK
+        INT fecha_key FK
+        STRING external_invoice_id
+        DECIMAL total_amount
+    }
+
+    STG_CLIENTES ||--o{ STG_ORDENES : origen_cliente
+    STG_PRODUCTOS ||--o{ STG_ITEMS_ORDEN : origen_producto
+    STG_ORDENES ||--|{ STG_ITEMS_ORDEN : origen_detalle
+    STG_ORDENES ||--|| STG_FACTURAS : origen_factura
+
+    STG_CLIENTES ||--o{ DIM_CLIENTE : carga_scd
+    STG_PRODUCTOS ||--o{ DIM_PRODUCTO : carga_scd
+    STG_ORDENES ||--o{ DIM_SUCURSAL : catalogo_sucursal
+
+    DIM_CLIENTE ||--o{ FACT_ORDENES : dimensiona
+    DIM_SUCURSAL ||--o{ FACT_ORDENES : dimensiona
+    DIM_TIEMPO ||--o{ FACT_ORDENES : dimensiona
+
+    DIM_CLIENTE ||--o{ FACT_ITEMS_ORDEN : dimensiona
+    DIM_PRODUCTO ||--o{ FACT_ITEMS_ORDEN : dimensiona
+    DIM_SUCURSAL ||--o{ FACT_ITEMS_ORDEN : dimensiona
+    DIM_TIEMPO ||--o{ FACT_ITEMS_ORDEN : dimensiona
+
+    DIM_CLIENTE ||--o{ FACT_FACTURAS : dimensiona
+    DIM_TIEMPO ||--o{ FACT_FACTURAS : dimensiona
+
+    STG_ORDENES ||--o{ FACT_ORDENES : carga_hechos
+    STG_ITEMS_ORDEN ||--o{ FACT_ITEMS_ORDEN : carga_hechos
+    STG_FACTURAS ||--o{ FACT_FACTURAS : carga_hechos
+    FACT_ORDENES ||--o{ FACT_ITEMS_ORDEN : relacion_orden
+    FACT_ORDENES ||--o| FACT_FACTURAS : relacion_factura

@@ -1,0 +1,21 @@
+﻿product_id,sku,name,unit_price,is_active
+e6f0aeac-6064-57ea-bacb-df3cc4a7510f,DC-001,Chilaquiles rojos con pollo,95.0,True
+ab46f16b-7009-5a5a-b743-95a64c4b4c04,DC-002,Chilaquiles verdes con huevo,89.0,True
+29994270-37aa-545f-8452-cf6d7c337cf4,DC-003,Café de olla,38.0,True
+145c0e62-3eb5-55dc-bf8b-58113187c5e2,DC-004,Agua fresca de jamaica,28.0,True
+59e82018-aff5-510a-a66d-9aecfbc72849,DC-005,Pan dulce (pieza),22.0,True
+7ef52c47-3dc9-5812-9b59-b169366446a5,DC-006,Torta de chilaquiles,78.0,True
+4655be0d-13e3-5124-bac1-a95e6bd2d96a,DC-007,Tamales (2 pzas),65.0,True
+d73c4938-0b36-549e-afbb-3a8bca02b4f4,DC-008,Jugo de naranja natural,45.0,True
+aedb2cf4-217c-5414-9e08-d299cda07e9b,DC-009,Enchiladas suizas,110.0,True
+fab95b7b-b4bd-550b-bc2e-95452f289cf5,DC-010,Molletes,72.0,True
+9faa5b41-5080-53f8-901d-fbed788f900b,DC-011,Churros,40.0,True
+8a3ab2ae-a798-54c2-a1ec-03909e4b08cb,DC-012,Chocolate caliente,42.0,True
+be1e957b-6535-5614-ab9f-36a8a69a281e,DC-013,Pozole chico,98.0,True
+f5905654-d371-591f-b6a4-6f39b24e72b8,DC-014,Sopa azteca,70.0,True
+e87aee4d-bef9-5978-bc8d-ec65a6e0c944,DC-015,Guacamole,55.0,True
+b0d42fb5-95bd-5a1d-91da-2f27f40eabbe,DC-016,Nachos,69.0,True
+ea078d18-eccf-5fea-892a-a869cb70e6e1,DC-017,Tacos dorados,85.0,True
+645b6879-1d27-5035-a58e-a20110f991e2,DC-018,Flan casero,48.0,True
+1636e7eb-7164-5f50-b1f8-5e09a9594654,DC-019,Ensalada fresca,60.0,False
+2804aea7-abc9-594f-9014-9ecc1e285d78,DC-020,Refresco lata,25.0,False

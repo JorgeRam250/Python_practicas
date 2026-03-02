@@ -1,0 +1,90 @@
+﻿Manual simple para usar la pantalla de Distrito Chilaquil
+======================================================
+
+Este manual es para una persona sin conocimientos tecnicos.
+Sigue los pasos en orden.
+
+Paso 1. Abrir la aplicacion principal
+-------------------------------------
+1) Da doble clic en "Docker Desktop" y espera a que diga "Engine running".
+2) Abre PowerShell.
+3) Copia y pega este comando:
+
+   cd C:\Users\Jorge\Desktop\Proyecto_Python
+
+Paso 2. Encender el sistema
+---------------------------
+1) En la misma ventana de PowerShell, pega este comando:
+
+   docker compose up --build -d
+
+2) Espera de 1 a 3 minutos.
+3) Cuando termine, el sistema ya esta encendido.
+
+Paso 3. Revisar que el sistema esta sano
+----------------------------------------
+1) Abre tu navegador (Chrome, Edge o Firefox).
+2) En la barra de direcciones escribe:
+
+   http://127.0.0.1:8000/health
+
+3) Debe aparecer algo como "status: ok".
+
+Paso 4. Abrir la pantalla de UI
+-------------------------------
+1) Abre una segunda ventana de PowerShell.
+2) Pega:
+
+   cd C:\Users\Jorge\Desktop\Proyecto_Python\ui
+   py -3.12 -m http.server 5500
+
+3) Abre en el navegador:
+
+   http://127.0.0.1:5500
+
+Paso 5. Configurar la URL de API en la pantalla
+------------------------------------------------
+1) Arriba de la pantalla busca "Base URL API".
+2) Escribe exactamente:
+
+   http://127.0.0.1:8000
+
+3) Presiona "Guardar".
+
+Paso 6. Operaciones mas comunes
+-------------------------------
+1) Products:
+   - Ve a la pestana "Products".
+   - Llena SKU, Name, Unit Price.
+   - Presiona "Crear producto".
+
+2) Customers:
+   - Ve a la pestana "Customers".
+   - Si aparece "N/A", es normal en esta version.
+
+3) Create Order:
+   - Ve a "Create Order".
+   - Captura Customer ID y Product ID.
+   - Presiona "Crear orden".
+
+4) Orders:
+   - Ve a "Orders".
+   - Presiona "Refrescar" para ver cambios.
+   - Puedes cambiar status con el formulario de la parte baja.
+
+Paso 7. Apagar todo al terminar
+--------------------------------
+1) Vuelve a la primera ventana de PowerShell.
+2) Ejecuta:
+
+   docker compose down -v
+
+3) Vuelve a la segunda ventana (donde corria la UI) y presiona:
+
+   Ctrl + C
+
+Problemas comunes
+-----------------
+- Si no abre la pagina: revisa que Docker Desktop siga encendido.
+- Si marca error de conexion: verifica que la Base URL sea http://127.0.0.1:8000.
+- Si no aparecen datos de Customers o Products: en esta version puede salir "N/A".

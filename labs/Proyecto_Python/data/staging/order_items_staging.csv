@@ -1,0 +1,21 @@
+﻿order_id,line_number,product_id,product_name,unit_price,quantity
+133b9269-ee59-5833-a981-b027f7616c49,1,645b6879-1d27-5035-a58e-a20110f991e2,Flan casero,48.0,3
+aa359af4-a772-5341-be77-70c008513a19,1,d73c4938-0b36-549e-afbb-3a8bca02b4f4,Jugo de naranja natural,45.0,1
+12a725b0-7057-5048-93e5-2f6c77259def,1,2804aea7-abc9-594f-9014-9ecc1e285d78,Refresco lata,25.0,2
+02c8d1d2-86e6-5f61-92b5-58c5342dd83e,1,8a3ab2ae-a798-54c2-a1ec-03909e4b08cb,Chocolate caliente,42.0,1
+d94e4caf-153c-5caa-a6cc-4c2ecab1795e,1,59e82018-aff5-510a-a66d-9aecfbc72849,Pan dulce (pieza),22.0,3
+e0042fc1-6b87-5b47-a6c2-3288dd7d8254,1,b0d42fb5-95bd-5a1d-91da-2f27f40eabbe,Nachos,69.0,2
+ac48d9c9-09b9-56d7-869e-63c511c19bba,1,e87aee4d-bef9-5978-bc8d-ec65a6e0c944,Guacamole,55.0,4
+2add23a8-1bc3-586d-a34e-8e1feeb0b79d,1,fab95b7b-b4bd-550b-bc2e-95452f289cf5,Molletes,72.0,3
+4c596e9a-a5e7-5734-b8b3-290e0f846809,1,4655be0d-13e3-5124-bac1-a95e6bd2d96a,Tamales (2 pzas),65.0,2
+308137e5-8058-5f47-acd1-865d75ff5a44,1,ea078d18-eccf-5fea-892a-a869cb70e6e1,Tacos dorados,85.0,3
+94e21411-c9c1-582f-8463-56f683ab3a37,1,ab46f16b-7009-5a5a-b743-95a64c4b4c04,Chilaquiles verdes con huevo,89.0,1
+c5a4a463-af92-56ba-89bf-a33fee763f94,1,1636e7eb-7164-5f50-b1f8-5e09a9594654,Ensalada fresca,60.0,4
+49999e70-52b2-525d-b611-768b6d29c640,1,be1e957b-6535-5614-ab9f-36a8a69a281e,Pozole chico,98.0,1
+c6427353-efaf-5f47-81d9-44869084bc63,1,145c0e62-3eb5-55dc-bf8b-58113187c5e2,Agua fresca de jamaica,28.0,1
+4dabaf59-df1c-593a-8560-182503b8124e,1,29994270-37aa-545f-8452-cf6d7c337cf4,Café de olla,38.0,4
+77757d63-08ae-56a0-8cb9-642d8f6b0b7d,1,aedb2cf4-217c-5414-9e08-d299cda07e9b,Enchiladas suizas,110.0,1
+e01d3a40-f7c9-50a5-a98d-fc1116986fb8,1,9faa5b41-5080-53f8-901d-fbed788f900b,Churros,40.0,2
+aa52cb9c-12bc-519c-a7b4-4b532f1e8632,1,f5905654-d371-591f-b6a4-6f39b24e72b8,Sopa azteca,70.0,1
+f5eb6c44-b913-56e9-b854-c36dde9c6701,1,7ef52c47-3dc9-5812-9b59-b169366446a5,Torta de chilaquiles,78.0,1
+7bb1b556-e8a3-5289-a50d-796ecb5db7f4,1,e6f0aeac-6064-57ea-bacb-df3cc4a7510f,Chilaquiles rojos con pollo,95.0,1

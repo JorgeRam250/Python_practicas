@@ -1,0 +1,14 @@
+﻿sequenceDiagram
+    participant Cliente as Cliente/API
+    participant Router as Router FastAPI
+    participant CasoUso as CasoDeUsoCrearOrden
+    participant Repo as PuertoRepositorioOrdenes
+    participant Evento as PuertoPublicadorEventos
+
+    Cliente->>Router: POST /orders
+    Router->>CasoUso: ejecutar(comando)
+    CasoUso->>Repo: guardar(orden)
+    Repo-->>CasoUso: orden persistida
+    CasoUso->>Evento: publicar(orden_creada.v1)
+    CasoUso-->>Router: OrdenDTO
+    Router-->>Cliente: 201 Creada

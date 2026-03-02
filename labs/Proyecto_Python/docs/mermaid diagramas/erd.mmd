@@ -1,0 +1,44 @@
+﻿erDiagram
+    CLIENTES {
+        UUID customer_id PK
+        STRING full_name
+        STRING email UK
+    }
+
+    PRODUCTOS {
+        UUID product_id PK
+        STRING sku UK
+        STRING name
+        DECIMAL unit_price
+        BOOLEAN is_active
+    }
+
+    ORDENES {
+        UUID order_id PK
+        UUID customer_id FK
+        STRING branch_id
+        DECIMAL shipping_cost
+        DECIMAL tax_rate
+        STRING status
+        STRING cancellation_reason
+    }
+
+    ITEMS_ORDEN {
+        UUID order_id FK
+        INT line_number PK
+        UUID product_id FK
+        STRING product_name
+        DECIMAL unit_price
+        INT quantity
+    }
+
+    FACTURAS_EXTERNAS {
+        UUID order_id PK, FK
+        STRING external_invoice_id UK
+        DECIMAL total_amount
+    }
+
+    CLIENTES ||--o{ ORDENES : realiza
+    ORDENES ||--|{ ITEMS_ORDEN : contiene
+    PRODUCTOS ||--o{ ITEMS_ORDEN : referencia
+    ORDENES ||--|| FACTURAS_EXTERNAS : se_registra_como
