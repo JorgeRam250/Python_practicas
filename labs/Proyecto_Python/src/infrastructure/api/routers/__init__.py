@@ -1,0 +1,8 @@
+"""Coleccion de routers API."""
+
+from .customers import router as customers_router
+from .health import router as health_router
+from .orders import router as orders_router
+from .products import router as products_router
+
+__all__ = ["customers_router", "health_router", "orders_router", "products_router"]
